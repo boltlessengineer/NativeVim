@@ -1,5 +1,7 @@
 # NativeVim
 
+![preview](https://github.com/boltlessengineer/nativevim/assets/60088301/7d0c6841-6e4c-43e0-8982-dc58328f484c)
+
 NativeVim is **not**
 - a distro
 - a plugin
