@@ -60,7 +60,10 @@ local SERVERS = {
     "https://nvim-neorocks.github.io/rocks-binaries",
     "https://nvim-neorocks.github.io/rocks-binaries-dev",
 }
-local luarocks_bin = "/nix/store/jxfwbzjcqwrib8nal95z1ws8a1kfvk4r-lua5.2-luarocks-3.11.1-1/bin/luarocks"
+local luarocks_bin = "luarocks"
+if vim.fn.executable(luarocks_bin) == 0 then
+    return
+end
 local rocks_path = vim.fs.joinpath(vim.fn.stdpath("data") --[[@as string]], "rocks")
 local site_path = vim.fs.joinpath(vim.fn.stdpath("data") --[[@as string]], "site")
 vim.fn.mkdir(vim.fs.joinpath(site_path, "pack", "treesitter", "opt"), "p")
@@ -116,9 +119,9 @@ end
 -- }
 -- package.path = package.path .. ";" .. table.concat(luarocks_path, ";")
 
-vim.cmd.packadd("tree-sitter-javascript")
-vim.cmd.packadd("tree-sitter-ecma")
-vim.cmd.packadd("tree-sitter-gomod")
+pcall(vim.cmd.packadd, "tree-sitter-javascript")
+pcall(vim.cmd.packadd, "tree-sitter-ecma")
+pcall(vim.cmd.packadd, "tree-sitter-gomod")
 
 vim.api.nvim_create_autocmd("FileType", {
     callback = function(ev)
