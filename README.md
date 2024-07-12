@@ -21,6 +21,10 @@ NativeVim **doesn't** include
 This is academical project to see Native Neovim's functionality without any external plugins.
 So people can understand the Neovim plugin ecosystem more and know what exact plugins they really need.
 
+## Requirement
+
+- Neovim v0.11+
+
 ## Installation
 
 NativeVim doesn't support any plugin manager by default.
