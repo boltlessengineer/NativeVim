@@ -45,3 +45,7 @@ NVIM_APPNAME=nativvim nvim
     - [ ] How to install TreeSitter parsers manually without plugin manager
 - [ ] How to manually install plugin without plugin manager
 - [ ] Native solutions to famous plugins (e.g. `Comment.nvim`)
+
+## References
+
+- [Vim Native Plugin Management - Brodie Robertson](https://www.youtube.com/watch?v=3fkTCkc687s)
