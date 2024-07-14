@@ -1,11 +1,13 @@
 -- :h lsp-defaults
 --
 -- NORMAL MODE
--- K      : hover
--- grn    : rename
--- gra    : code action
--- grr    : references
--- CTRL-] : definition
+-- K        : hover
+-- grn      : rename
+-- gra      : code action
+-- grr      : references
+-- CTRL-]   : definition
+-- CTRL-W_] : definition in new window
+-- CTRL-W_} : definition in preview window
 --
 -- VISUAL MODE
 -- gq : format
