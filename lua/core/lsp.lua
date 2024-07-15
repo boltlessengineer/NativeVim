@@ -50,7 +50,7 @@ for name, config in pairs(servers) do
                     vim.notify("failed to start server " .. name, vim.log.levels.ERROR)
                     return
                 end
-                vim.lsp.buf_attach_client(ev.bufnr, client_id)
+                vim.lsp.buf_attach_client(ev.buf, client_id)
             end,
         })
     end
