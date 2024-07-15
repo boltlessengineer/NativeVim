@@ -43,6 +43,7 @@ NVIM_APPNAME=nativevim nvim
 ## TODOs
 
 - [x] How to setup LSP without any plugins
+- [x] How to setup snippets?
 - [ ] How to setup TreeSitter parsers without any plugins (git, luarocks)
     - [ ] How to install TreeSitter parsers manually without plugin manager
 - [ ] How to manually install plugin without plugin manager (git, luarocks)
