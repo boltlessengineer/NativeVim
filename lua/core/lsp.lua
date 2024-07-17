@@ -24,7 +24,6 @@ local servers = {
         cmd = { "lua-language-server" },
         root_dir = vim.fs.root(0, { ".luarc.json", ".luarc.jsonc", ".luacheckrc", ".stylua.toml", "stylua.toml", "selene.toml", "selene.yml", ".git" }),
         filetypes = { "lua" },
-        single_file_support = true,
         on_init = require("util").lua_ls_on_init,
     },
     tsserver = {
@@ -35,7 +34,12 @@ local servers = {
         init_options = {
             hostInfo = "neovim",
         },
-        single_file_support = true,
+    },
+    gopls = {
+        name = "gopls",
+        cmd = { "gopls" },
+        root_dir = vim.fs.root(0, { "go.work", "go.mod", ".git" }),
+        filetypes = { "go", "gomod", "gowork", "gotmpl" },
     },
 }
 local group = vim.api.nvim_create_augroup("UserLspStart", { clear = true })
@@ -45,12 +49,7 @@ for name, config in pairs(servers) do
             group = group,
             pattern = config.filetypes,
             callback = function (ev)
-                local client_id = vim.lsp.start(servers[name])
-                if not client_id then
-                    vim.notify("failed to start server " .. name, vim.log.levels.ERROR)
-                    return
-                end
-                vim.lsp.buf_attach_client(ev.buf, client_id)
+                vim.lsp.start(servers[name], { bufnr = ev.buf })
             end,
         })
     end
