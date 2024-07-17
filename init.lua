@@ -3,8 +3,8 @@ if vim.fn.has("nvim-0.11") == 0 then
     return
 end
 require("core.options")
-require("core.lsp")
 require("core.treesitter")
+require("core.lsp")
 require("core.statusline")
 require("core.snippet")
 require("plugins.netrw")

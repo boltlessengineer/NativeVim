@@ -5,21 +5,27 @@
 > NativeVim is a Neovim config without plugins
 
 NativeVim is **not**:
-- a distro
-- a plugin
-- a package
+- a distro (unless you call [kickstart.nvim] a neovim distro)
+- a plugin/package
 - or something that tries to reinvent famous plugins
-
-It is more similar to [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) instead.
 
 NativeVim **doesn't** include:
 - a package manager (e.g. `lazy.nvim` or `rocks.nvim`)
 - some famous plugins like `nvim-lspconfig`, `nvim-cmp` and `nvim-treesitter`
 - and any other vim/neovim plugins[^1]
 
+NativeVim(pure Neovim) has features like:
+
+- basic LSP features
+- TreeSitter Highlighting
+- completions
+- snippets (including LSP and user defined ones)
+
+and more!
+
 ## Why?
 
-This is academical project to see Native Neovim's functionality without any external plugins.
+This is an academical project to see Native Neovim's functionality without any external plugins.
 So people can understand the Neovim plugin ecosystem more and know what exact plugins they really need.
 
 ## Requirement
@@ -40,13 +46,26 @@ git clone https://github.com/boltlessengineer/nativevim.git ~/.config/nativevim
 NVIM_APPNAME=nativevim nvim
 ```
 
+## LoC
+
+```
+--------------------------------------------------------------------------------
+ Language             Files        Lines        Blank      Comment         Code
+--------------------------------------------------------------------------------
+ Lua                     10          280           27           84          169
+ Markdown                 1           54           17            0           37
+ Nix                      1            8            1            0            7
+--------------------------------------------------------------------------------
+ Total                   12          342           45           84          213
+--------------------------------------------------------------------------------
+```
+
 ## TODOs
 
 - [x] How to setup LSP without any plugins
 - [x] How to setup snippets?
 - [x] How to setup TreeSitter parsers without any plugins (git, luarocks)
   - [x] How to install TreeSitter parsers manually without plugin manager
-- [ ] How to manually install plugin without plugin manager (git, luarocks)
 - [x] Native solutions to famous plugins (e.g. `Comment.nvim`)
 
 [^1]: fzf is edge-case here but it is disabled by default
