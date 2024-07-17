@@ -23,10 +23,17 @@ NativeVim(pure Neovim) has features like:
 
 and more!
 
+> [!CAUTION]
+> Since this config was developed to demonstrate the most native method, it may be slower or lack features than other configs.
+
 ## Why?
 
-This is an academical project to see Native Neovim's functionality without any external plugins.
+This is an academical project to see if I can write Neovim config from scratch without any external plugins.
 So people can understand the Neovim plugin ecosystem more and know what exact plugins they really need.
+
+> [!NOTE]
+> I'm not saying "you don't need any of those plugins". Most plugins out there have their own reasons to be used.
+> But if you're curious about the solution without them, this project is for you.
 
 ## Requirement
 
@@ -53,10 +60,9 @@ NVIM_APPNAME=nativevim nvim
  Language             Files        Lines        Blank      Comment         Code
 --------------------------------------------------------------------------------
  Lua                     10          280           27           84          169
- Markdown                 1           54           17            0           37
- Nix                      1            8            1            0            7
+ Markdown                 1           80           23            0           57
 --------------------------------------------------------------------------------
- Total                   12          342           45           84          213
+ Total                   11          360           50           84          226
 --------------------------------------------------------------------------------
 ```
 
