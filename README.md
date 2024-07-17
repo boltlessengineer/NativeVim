@@ -14,7 +14,7 @@ It is more similar to [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvi
 
 NativeVim **doesn't** include:
 - a package manager (e.g. `lazy.nvim` or `rocks.nvim`)
-- some famouse plugins like `nvim-lspconfig`, `nvim-cmp` and `nvim-treesitter`
+- some famous plugins like `nvim-lspconfig`, `nvim-cmp` and `nvim-treesitter`
 - and any other vim/neovim plugins[^1]
 
 ## Why?
@@ -44,14 +44,12 @@ NVIM_APPNAME=nativevim nvim
 
 - [x] How to setup LSP without any plugins
 - [x] How to setup snippets?
-- [ ] How to setup TreeSitter parsers without any plugins (git, luarocks)
-    - [ ] How to install TreeSitter parsers manually without plugin manager
+- [x] How to setup TreeSitter parsers without any plugins (git, luarocks)
+  - [x] How to install TreeSitter parsers manually without plugin manager
 - [ ] How to manually install plugin without plugin manager (git, luarocks)
-- [ ] Native solutions to famous plugins (e.g. `Comment.nvim`)
+- [x] Native solutions to famous plugins (e.g. `Comment.nvim`)
 
 ## References
-
-- [Vim Native Plugin Management - Brodie Robertson](https://www.youtube.com/watch?v=3fkTCkc687s)
 
 [^1]: fzf is edge-case here but it is disabled by default
 
