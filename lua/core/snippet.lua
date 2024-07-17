@@ -1,11 +1,10 @@
 ---@param trigger string trigger string for snippet
 ---@param body string snippet text that will be expanded
----@param opts? vim.keymap.set.Opts default to `{ buffer = 0 }`
+---@param opts? vim.keymap.set.Opts
 ---
 ---Refer to <https://microsoft.github.io/language-server-protocol/specification/#snippet_syntax>
 ---for the specification of valid body.
 function vim.snippet.add(trigger, body, opts)
-    opts = opts or { buffer = 0 }
     vim.keymap.set("ia", trigger, function()
         -- If abbrev is expanded with keys like "(", ")", "<cr>", "<space>",
         -- don't expand the snippet. Only accept "<c-]>" as trigger key.
