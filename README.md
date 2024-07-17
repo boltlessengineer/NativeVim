@@ -49,8 +49,6 @@ NVIM_APPNAME=nativevim nvim
 - [ ] How to manually install plugin without plugin manager (git, luarocks)
 - [x] Native solutions to famous plugins (e.g. `Comment.nvim`)
 
-## References
-
 [^1]: fzf is edge-case here but it is disabled by default
 
 [kickstart.nvim]: https://github.com/nvim-lua/kickstart.nvim
