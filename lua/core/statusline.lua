@@ -24,7 +24,7 @@ end
 function _G.statusline()
     return table.concat({
         "%f",
-        "%h%w%r",
+        "%h%w%m%r",
         "%=",
         lsp_status(),
         " %-14(%l,%c%V%)",
