@@ -43,13 +43,13 @@ local servers = {
     },
 }
 local group = vim.api.nvim_create_augroup("UserLspStart", { clear = true })
-for name, config in pairs(servers) do
-    if vim.fn.executable(servers[name].cmd[1]) ~= 0 then
+for _, config in pairs(servers) do
+    if vim.fn.executable(config.cmd[1]) ~= 0 then
         vim.api.nvim_create_autocmd("FileType", {
             group = group,
             pattern = config.filetypes,
             callback = function (ev)
-                vim.lsp.start(servers[name], { bufnr = ev.buf })
+                vim.lsp.start(config, { bufnr = ev.buf })
             end,
         })
     end
