@@ -10,9 +10,6 @@ vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.foldmethod = "expr"
 vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-if vim.fn.executable("rg") ~= 0 then
-    vim.o.grepprg = "rg --vimgrep"
-end
 vim.o.inccommand = "split"
 vim.o.ignorecase = true
 vim.o.list = true
