@@ -16,20 +16,29 @@
 -- CTRL-S        : signature help
 -- CTRL-X_CTRL-O : completion
 
+---simple utility function to evaluate `vim.fs.root` on `FileType` events (#5)
+---@see vim.fs.root
+---@see lspconfig.util.root_pattern
+local function root_pattern(marker)
+    return function ()
+        return vim.fs.root(0, marker)
+    end
+end
+
 ---server configurations copied from <https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md>
 ---@type table<string, vim.lsp.ClientConfig>
 local servers = {
     lua_ls = {
         name = "lua-language-server",
         cmd = { "lua-language-server" },
-        root_dir = vim.fs.root(0, { ".luarc.json", ".luarc.jsonc", ".luacheckrc", ".stylua.toml", "stylua.toml", "selene.toml", "selene.yml", ".git" }),
+        _root_dir = root_pattern({ ".luarc.json", ".luarc.jsonc", ".luacheckrc", ".stylua.toml", "stylua.toml", "selene.toml", "selene.yml", ".git" }),
         filetypes = { "lua" },
         on_init = require("util").lua_ls_on_init,
     },
     tsserver = {
         name = "typescript-language-server",
         cmd = { "typescript-language-server", "--stdio" },
-        root_dir = vim.fs.root(0, { "tsconfig.json", "jsconfig.json", "package.json", ".git" }),
+        _root_dir = root_pattern({ "tsconfig.json", "jsconfig.json", "package.json", ".git" }),
         filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
         init_options = {
             hostInfo = "neovim",
@@ -38,7 +47,7 @@ local servers = {
     gopls = {
         name = "gopls",
         cmd = { "gopls" },
-        root_dir = vim.fs.root(0, { "go.work", "go.mod", ".git" }),
+        _root_dir = root_pattern({ "go.work", "go.mod", ".git" }),
         filetypes = { "go", "gomod", "gowork", "gotmpl" },
     },
 }
@@ -49,6 +58,9 @@ for _, config in pairs(servers) do
             group = group,
             pattern = config.filetypes,
             callback = function (ev)
+                if config._root_dir then
+                    config.root_dir = config._root_dir()
+                end
                 vim.lsp.start(config, { bufnr = ev.buf })
             end,
         })
