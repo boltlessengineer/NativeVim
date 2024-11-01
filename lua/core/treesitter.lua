@@ -16,25 +16,27 @@ If we do all manually, second way is more convenient because we don't need to ma
 
 ## 1. install parser with luarocks
 
-```sh
+```console
 luarocks \
-    --force-lock \
     --lua-version=5.1 \
     --tree=$HOME/.local/share/nvim/rocks \
-    --dev \
     install tree-sitter-rust
 ```
 
 We need to specify local install path with `--tree` flag. Here, we are using `rocks` folder in `stdpath("data")` (see `:h $XDG_DATA_HOME`.)
 
-## 2. add installed path to `'runtimepath'`
+## 2. add installed rock to `'packpath'`
 
-Installed parser will be in `~/.local/share/nvim/rocks/lib/luarocks/rocks-5.1/tree-sitter-rust/scm-1` where `scm-1` is the installed version.
+Installed parser will be in `~/.local/share/nvim/rocks/lib/luarocks/rocks-5.1/tree-sitter-rust/0.0.27-1` where `0.0.27-1` is the installed version.
 
-Add this path to `'runtimepath'` so that Neovim can recognize and register the parser and bundled queries.
+Add this path to `'packpath'` so that Neovim can recognize and register the parser and bundled queries.
 
-```lua
-vim.opt.runtimepath:append(vim.fs.joinpath(vim.fn.stdpath("data"), "rocks", "lib", "luarocks", "rocks-5.1", "tree-sitter-rust", "scm-1"))
+```console
+# create target packpath directory (`treesitter` is arbitrary)
+mkdir -p $HOME/.local/share/nvim/site/pack/treesitter/start
+
+# symlink installed rock to packpath
+ln -sf $HOME/.local/share/nvim/rocks/lib/luarocks/rocks-5.1/tree-sitter-rust/0.0.27-1 $HOME/.local/share/nvim/site/pack/treesitter/start/tree-sitter-rust
 ```
 
 ## 3. start the parser in `FileType` AutoCommand
@@ -50,7 +52,6 @@ vim.api.nvim_create_autocmd("FileType", {
 Add this code in your config. Reopen the editor, and you are done.
 --]]
 
-vim.opt.runtimepath:append(vim.fs.joinpath(vim.fn.stdpath("data") --[[@as string]], "rocks", "lib", "luarocks", "rocks-5.1", "tree-sitter-*", "*"))
 vim.api.nvim_create_autocmd("FileType", {
     callback = function()
         pcall(vim.treesitter.start)
