@@ -35,7 +35,7 @@ local servers = {
         filetypes = { "lua" },
         on_init = require("util").lua_ls_on_init,
     },
-    tsserver = {
+    ts_ls = {
         name = "typescript-language-server",
         cmd = { "typescript-language-server", "--stdio" },
         _root_dir = root_pattern({ "tsconfig.json", "jsconfig.json", "package.json", ".git" }),
