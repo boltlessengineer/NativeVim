@@ -12,7 +12,7 @@ NativeVim is **not**:
 NativeVim **doesn't** include:
 - a package manager (e.g. `lazy.nvim` or `rocks.nvim`)
 - famous plugins like `nvim-lspconfig`, `nvim-cmp` and `nvim-treesitter`
-- and any other vim/neovim plugins[^2]
+- and any other vim/neovim plugins
 
 NativeVim has features like:
 
@@ -38,7 +38,6 @@ So people can understand the Neovim plugin ecosystem more and know what exact pl
 ## Requirement
 
 - Neovim v0.10+
-- [fzf](https://github.com/junegunn/fzf) (optional)
 
 ## Installation
 
@@ -67,6 +66,5 @@ NVIM_APPNAME=nativevim nvim
 ```
 
 [^1]: unless you call [kickstart.nvim] a Neovim distro
-[^2]: fzf is edge-case here but it is disabled by default
 
 [kickstart.nvim]: https://github.com/nvim-lua/kickstart.nvim
