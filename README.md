@@ -37,7 +37,7 @@ So people can understand the Neovim plugin ecosystem more and know what exact pl
 
 ## Requirement
 
-- Neovim v0.10+
+- Neovim v0.11+
 
 ## Installation
 
@@ -58,10 +58,10 @@ NVIM_APPNAME=nativevim nvim
 --------------------------------------------------------------------------------
  Language             Files        Lines        Blank      Comment         Code
 --------------------------------------------------------------------------------
- Lua                     10          324           48          108          168
- Markdown                 1           71           21            0           50
+ Lua                     12          274           47           82          145
+ Markdown                 1           70           21            0           49
 --------------------------------------------------------------------------------
- Total                   11          395           69          108          218
+ Total                   13          344           68           82          194
 --------------------------------------------------------------------------------
 ```
 
