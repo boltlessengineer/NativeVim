@@ -1,11 +1,11 @@
 local M = {}
 
 function M.lua_ls_on_init(client)
-    local path = vim.tbl_get(client,"workspace_folders", 1, "name")
+    local path = vim.tbl_get(client, "workspace_folders", 1, "name")
     if not path then
-        vim.print("no workspace")
         return
     end
+    -- override the lua-language-server settings for Neovim config
     client.settings = vim.tbl_deep_extend('force', client.settings, {
         Lua = {
             runtime = {

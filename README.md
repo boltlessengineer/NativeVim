@@ -5,18 +5,18 @@
 > NativeVim is a Neovim config without plugins
 
 NativeVim is **not**:
-- a distro (unless you call [kickstart.nvim] a neovim distro)
+- a distro[^1]
 - a plugin/package
 - or something that tries to reinvent famous plugins
 
 NativeVim **doesn't** include:
 - a package manager (e.g. `lazy.nvim` or `rocks.nvim`)
-- some famous plugins like `nvim-lspconfig`, `nvim-cmp` and `nvim-treesitter`
-- and any other vim/neovim plugins[^1]
+- famous plugins like `nvim-lspconfig`, `nvim-cmp` and `nvim-treesitter`
+- and any other vim/neovim plugins[^2]
 
-NativeVim(pure Neovim) has features like:
+NativeVim has features like:
 
-- basic LSP features
+- basic LSP functionalities
 - TreeSitter Highlighting
 - completions
 - snippets (including LSP and user defined ones)
@@ -37,7 +37,7 @@ So people can understand the Neovim plugin ecosystem more and know what exact pl
 
 ## Requirement
 
-- Neovim v0.11+
+- Neovim v0.10+
 - [fzf](https://github.com/junegunn/fzf) (optional)
 
 ## Installation
@@ -53,27 +53,20 @@ git clone https://github.com/boltlessengineer/nativevim.git ~/.config/nativevim
 NVIM_APPNAME=nativevim nvim
 ```
 
-## LoC
+## Lines of Code
 
 ```
 --------------------------------------------------------------------------------
  Language             Files        Lines        Blank      Comment         Code
 --------------------------------------------------------------------------------
- Lua                     10          280           27           84          169
- Markdown                 1           80           23            0           57
+ Lua                     10          324           48          108          168
+ Markdown                 1           71           21            0           50
 --------------------------------------------------------------------------------
- Total                   11          360           50           84          226
+ Total                   11          395           69          108          218
 --------------------------------------------------------------------------------
 ```
 
-## TODOs
-
-- [x] How to setup LSP without any plugins
-- [x] How to setup snippets?
-- [x] How to setup TreeSitter parsers without any plugins (git, luarocks)
-  - [x] How to install TreeSitter parsers manually without plugin manager
-- [x] Native solutions to famous plugins (e.g. `Comment.nvim`)
-
-[^1]: fzf is edge-case here but it is disabled by default
+[^1]: unless you call [kickstart.nvim] a Neovim distro
+[^2]: fzf is edge-case here but it is disabled by default
 
 [kickstart.nvim]: https://github.com/nvim-lua/kickstart.nvim

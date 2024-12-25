@@ -1,0 +1,2 @@
+# ignore all personal configs I don't want to ship with this config:
+**/*personal.lua
