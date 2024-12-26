@@ -1,5 +1,5 @@
 -- general options
-vim.o.completeopt = "menu,menuone,popup" -- modern completion menu
+vim.o.completeopt = "menu,menuone,popup,fuzzy" -- modern completion menu
 
 vim.o.foldenable = true   -- enable fold
 vim.o.foldlevel = 99      -- start editing with all folds opened
