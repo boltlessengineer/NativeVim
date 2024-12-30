@@ -33,7 +33,6 @@ local server_configs = {
     },
 }
 
--- TODO: remove codes below when Neovim 0.11 is stable
 local group = vim.api.nvim_create_augroup("UserLspStart", { clear = true })
 for _, config in pairs(server_configs) do
     if vim.fn.executable(config.cmd[1]) ~= 0 then
