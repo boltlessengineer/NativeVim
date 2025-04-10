@@ -19,7 +19,6 @@ NativeVim has features like:
 - basic LSP functionalities
 - TreeSitter Highlighting
 - completions
-- snippets (including LSP and user defined ones)
 
 and more!
 
