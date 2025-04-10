@@ -38,7 +38,7 @@ So people can understand the Neovim plugin ecosystem more and know what exact pl
 
 - Neovim v0.11+
 
-## Installation
+## How to use
 
 NativeVim doesn't support any plugin manager by default.
 Just clone it to `~/.config/nativevim` and use with `NVIM_APPNAME` environment variable.
@@ -51,16 +51,21 @@ git clone https://github.com/boltlessengineer/nativevim.git ~/.config/nativevim
 NVIM_APPNAME=nativevim nvim
 ```
 
+> [!NOTE]
+> NativeVim is just a Neovim config template designed to be read. It's just ~200 lines of lua code.
+> Take some time and read through the entire codebase to see how it works.
+> Feel free to open an issue if you have a different opinion about default config.
+
 ## Lines of Code
 
 ```
 --------------------------------------------------------------------------------
  Language             Files        Lines        Blank      Comment         Code
 --------------------------------------------------------------------------------
- Lua                     12          274           47           82          145
- Markdown                 1           70           21            0           49
+ Lua                      9          235           45           72          118
+ Markdown                 1           69           21            0           48
 --------------------------------------------------------------------------------
- Total                   13          344           68           82          194
+ Total                   10          304           66           72          166
 --------------------------------------------------------------------------------
 ```
 
